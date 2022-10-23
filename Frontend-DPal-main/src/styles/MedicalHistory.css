@@ -1,0 +1,83 @@
+
+
+.medical-history {
+  width: 90%;
+  margin-left: 5%;
+  display: inline-block;
+  margin-top: 20px;
+}
+.input-btn{
+    width: inherit;
+    margin-right: 100px;
+}
+.medical-history .heading {
+  background-color: rgb(206, 206, 206);
+}
+
+.medical-history h1 {
+  text-align: center;
+}
+
+.medical-history .history-form{
+  display: flex;
+  font-size: 25px;
+}
+
+.medical-history .inner-box {
+  width: 30%;
+  margin-left: 15%;
+}
+
+.medical-history .left-check {
+  float: left;
+}
+
+
+.medical-history .right-check {
+  float: right;
+}
+
+.medical-history label {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.medical-history input[type=checkbox] {
+  transform: scale(2.0) translateY(8px);
+  margin-left: 10px;
+  vertical-align: middle;
+  float: right;
+  margin-right: 10%;
+}
+
+
+.medical-history button {
+  width: 50%;
+  font-size: 1.3rem;
+  margin-left: 10%;
+  max-width: 400px;
+      width: inherit;
+}
+
+@media only screen and (max-width: 1300px) {
+  .medical-history .left-check {
+    float: none;
+  }
+
+  .medical-history .right-check {
+    float: none;
+  }
+
+  .medical-history .history-form{
+    display: inline;
+    font-size: 25px;
+  }
+  .medical-history .inner-box {
+    width: 100%;
+    margin-left: 0;
+  }
+  .medical-history input{
+    
+  }
+
+}
