@@ -45,17 +45,12 @@ namespace WebApp.Controllers
         [HttpPost]
         public async Task<ActionResult<RegisterUser>> Post(RegisterUser user)
         {
-
             string query = @"select EmailAdd from RegisterUsers
                             where EmailAdd = '" + user.EmailAdd + @"'";
-
             DataTable table = new DataTable("table");
-
             // string to connect to database 
             string sqlDataSource = _iconfigurations.GetConnectionString("dpal");
-
             SqlDataReader myReader;
-
             // loads teh Reader with data form database 
             await using (SqlConnection myConn = new SqlConnection(sqlDataSource))
             {
@@ -68,31 +63,22 @@ namespace WebApp.Controllers
                     myConn.Close();
                 };
             };
-
             string checkUser = user.EmailAdd;
-
             UserInfo[] newRow = new UserInfo[1];
-
             bool validUser = true;
             //JsonResult checkUser = new JsonResult(table);
-
             table.BeginLoadData();
-
             DataRow row;
             // Add the new row to the rows collection.
             //row =  table.LoadDataRow(newRow, true);
-
             foreach (DataRow dr in table.Rows)
             {
-
                 if (checkUser == dr["EmailAdd"].ToString())
                 {
                     Console.WriteLine(String.Format("Row: {0}", dr["EmailAdd"]));
                     validUser = false;
                 }
-
             }
-
             table.EndLoadData();
 
             // if user name has not been used before account is created else error is returned
@@ -101,29 +87,19 @@ namespace WebApp.Controllers
                 CreatePasswordHash(user.Password,
                  out byte[] passwordHash,
                  out byte[] passwordSalt);
-
                 user.PasswordHash = passwordHash;
                 user.PasswordSalt = passwordSalt;
-
                 _context.RegisterUsers.Add(user);
                 await _context.SaveChangesAsync();
-
                 Console.WriteLine("added here");
-
                 return user;
-
             }
             else
             {
-
                 Console.WriteLine("returned error");
                 return NoContent();
-
             }
-
-
             return BadRequest();
-
         }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
