@@ -1,0 +1,87 @@
+.tracker {
+    width: 90%;
+    margin-left: 5%;
+    position: relative;
+    float: left;
+    margin-top: 15px;
+    padding: 10px 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    margin-left: 60%;
+    width: 40%;
+    padding-top: 10px;
+    transform: translateY(-50px);
+    max-height: 0px;
+}
+
+.tracker label {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.inside-trackers {
+    width: 45%;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.left-tracker {
+    float: left;
+}
+
+.right-tracker {
+    float: right;
+}
+
+.tracker .btn {
+    margin-left: 45%;
+    margin-top: 15px;
+    width: 10%;
+    min-width: 80px;
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .inside-trackers {
+        width: 50%;
+        border: 2px solid black;
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .inside-trackers {
+        width: 100%;
+        border: none;
+        padding: 20px;
+    }
+    .right-tracker {
+        transform: translateY(-20px);
+        float: none;
+    }
+
+    .left-tracker {
+        float: none;
+    }
+
+    .tracker {
+        border: 2px solid black;
+        margin-bottom: 20px;
+    }
+
+    .tracker .btn {
+        margin-top: 0;
+        transform: translateY(-20px);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .slider {
+        margin-left: 0;
+        transform: translateY(-20px);
+        width: 100%;
+    }
+}

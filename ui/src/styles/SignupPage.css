@@ -1,0 +1,107 @@
+body {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  legend{
+    text-align: center;
+  }
+  
+
+  .signup-form{
+      display: flex;
+      justify-content: center;
+      margin: 50px auto 0 auto;
+      max-width: 60%;
+      border: 1px solid black;
+      padding: 2rem;
+      
+  }
+
+  
+  .signup-form input, select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 1px solid #ccc;
+    border-radius: .1875rem;
+    display: block;
+    font-size: .875rem;
+    padding: .275rem;
+    width: 100%;
+  }
+  
+  .signup-form input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+       -moz-appearance: checkbox;
+            appearance: checkbox;
+    display: inline-block;
+    width: auto;
+    margin-right: .1rem;
+  }
+  
+  .signup-form input[type="password"] {
+    margin-bottom: .2rem;
+  }
+  
+  .signup-form input[type="submit"] {
+    background-color: #015294;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .signup-form label {
+    display: inline-block;
+    color: #666;
+    font-size: .875rem;
+  }
+  .signup-form .left-side {
+    float: left;
+  }
+
+  .signup-form .right-side {
+    float: right;
+  }
+
+  .signup-form input[type="reset"] {
+    margin: auto;
+    width: 30%;
+    background-color: white;
+    border: 1px solid red;
+    color: rgb(255, 0, 0);
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    margin-bottom: 15px;
+  }
+
+  .signup-form input[type="checkbox"] {
+    margin-top: 40px;
+    margin-right: 10px;
+  }
+
+  /*Make page responsive on screen size change*/
+  @media only screen and (max-width: 990px) {
+    .signup-form {
+      display: flex;
+      justify-content: center;
+      margin: 50px auto 0 auto;
+      max-width: 90%;
+      border: 1px solid black;
+      padding: 2rem;
+    }
+
+    .signup-form form {
+        width: 100%;
+    }
+
+    .signup-form .left-side {
+      float: none;
+    }
+  
+    .signup-form .right-side {
+      float: none;
+    }
+
+  }

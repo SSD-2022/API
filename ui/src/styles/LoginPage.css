@@ -1,0 +1,73 @@
+body {
+    font-family: "Open Sans", sans-serif;
+  }
+  
+
+  .login-form{
+      display: flex;
+      justify-content: center;
+      margin: 50px auto 0 auto;
+      min-width: 40%;
+      max-width: 40%;
+      border: 1px solid black;
+      padding: 2rem;
+      
+  }
+
+  .login-form form {
+    max-width: 300px;
+  }
+  
+  .login-form input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 1px solid #ccc;
+    border-radius: .1875rem;
+    box-sizing: border-box;
+    display: block;
+    font-size: .875rem;
+    padding: .275rem;
+    width: 100%;
+  }
+  
+  .login-form input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+       -moz-appearance: checkbox;
+            appearance: checkbox;
+    display: inline-block;
+    width: auto;
+    margin-right: .1rem;
+  }
+  
+  .login-form input[type="password"] {
+    margin-bottom: .2rem;
+  }
+  
+  .login-form input[type="submit"] {
+    background-color: #015294;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+  }
+  
+  .login-form label {
+    color: #666;
+    font-size: .875rem;
+  }
+
+  /*Make page responsive on screen size change*/
+  @media only screen and (max-width: 990px) {
+    .login-form {
+      display: flex;
+      justify-content: center;
+      margin: 50px auto 0 auto;
+      max-width: 90%;
+      border: 1px solid black;
+      padding: 2rem;
+    }
+    .login-form form {
+      width: 100%;
+  }
+  }
