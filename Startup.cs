@@ -31,15 +31,16 @@ namespace WebApp
             {
                 // Current policy allows users for anywhere or any origin to connect can be changed later to improve 
                 //security
-                options.AddPolicy("AllowOrigin", c => { 
+                options.AddPolicy("AllowOrigin", c =>
+                {
                     c.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
                 });
 
             });
-            
+
 
             services.AddControllersWithViews().AddNewtonsoftJson(Options =>
-            Options.SerializerSettings.ReferenceLoopHandling= Newtonsoft
+            Options.SerializerSettings.ReferenceLoopHandling = Newtonsoft
             .Json.ReferenceLoopHandling.Ignore).AddNewtonsoftJson(
                 options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             services.AddControllers();
@@ -54,11 +55,11 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseCors(options => options.WithOrigins("*").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            // if (env.IsDevelopment())
+            // {
+            app.UseDeveloperExceptionPage();
+            // }
 
             app.UseRouting();
 

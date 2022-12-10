@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
@@ -117,6 +119,12 @@ namespace WebApp.Controllers
             throw new NotImplementedException();
         }
 
+        // get user data from database
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<RegisterUser>>> GetRegisterUsers()
+        {
+            return await _context.RegisterUsers.ToListAsync();
+        }
 
     }
 }
