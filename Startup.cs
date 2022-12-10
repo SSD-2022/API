@@ -35,31 +35,25 @@ namespace WebApp
                 {
                     c.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
                 });
-
             });
-
 
             services.AddControllersWithViews().AddNewtonsoftJson(Options =>
             Options.SerializerSettings.ReferenceLoopHandling = Newtonsoft
             .Json.ReferenceLoopHandling.Ignore).AddNewtonsoftJson(
                 options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             services.AddControllers();
-
             services.AddDbContext<DbContext_dpal>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("dpal")));
-
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCors(options => options.WithOrigins("*").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
-            // if (env.IsDevelopment())
-            // {
-            app.UseDeveloperExceptionPage();
-            // }
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
             app.UseRouting();
 
